@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /* 构造函数工厂制造 */
+  function Sobj(name,type,bload,attack){
+    this.name=name;
+    this.type=type;
+    this.bload=bload;
+    this.attack = attack;
+  }
+
+  let lianpo = new Sobj('廉颇','力量型',500,'近战');
+  let houyi = new Sobj('后羿','射手型',100+'血量','远战')
+  console.log(lianpo);
+  console.log(houyi);
+
+
+
+
+
+
+  let arr = [11, 8, 15, 35, 81, 62];
+  // // 实现一个方法，  找到数组中，符合要求的那一项
+  // // 你得告诉我，你想找哪个数组， 符合那一项
+    function find(arr,num){
+      let res
+      for(var i=0;i<arr.length;i++){
+        if(arr[i]>num){
+          res=arr[i];
+          return res;
+          break;
+        }
+      }
+    }
+    let res = find(arr,50);
+    console.log(res);
+
+    data={
+      type:1,
+      title:'',
+      questionA:'aaa',
+      questionB:'bbb',
+      questionC:'ccc',
+      questionD:'ddd',
+      level:'',
+      answer:1
+    }
+   let  optionTemp = [
+        {
+          id: 1,
+          key: "A",
+          label: "选项A",
+          value: ""
+        },
+        {
+          id: 2,
+          key: "B",
+          label: "选项B",
+          value: ""
+        },
+        {
+          id: 3,
+          key: "C",
+          label: "选项C",
+          value: ""
+        },
+        {
+          id: 4,
+          key: "D",
+          label: "选项D",
+          value: ""
+        }
+      ]
+
+      let questionOption = JSON.parse(JSON.stringify(optionTemp));
+      
+      // questionOption[0].value = data.questionA;
+      // questionOption[1].value = data.questionB;
+      // questionOption[2].value = data.questionC;
+      // questionOption[3].value = data.questionD;
+        questionOption.forEach((item,i) => {
+          questionOption[i].value = data['question'+item.key];
+        });
+        
+      let rew=questionOption.filter((item)=> item.key)
+      console.log(rew);
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // function find(arr,num){
+  //   // 
+  //   let res;
+  //   // forEach  for
+  //   for(let i = 0; i < arr.length; i++){
+  //     if(arr[i] > num){
+  //       res = arr[i];
+  //       break;
+  //     }
+  //   }
+  //   // 如果你找到满足条件的哪一项就停止； 应该用for
+  //   // 不然就用forEach;
+  //   return res;
+  // }
+  // let res = find(arr,30);
+  // console.log(res) 
+
+  
+
+</script>
+
+</html>
